@@ -1,6 +1,8 @@
-﻿namespace Trening.Repositories.Interfaces
+﻿using Trening.Models.Interfaces;
+
+namespace Trening.Repositories
 {
-    public interface IGenericRepository<T>
+    public interface IGenericRepository<T> where T : IEntity //не менять
     {
         public T GetById(int id);
         public List<T> GetAll();

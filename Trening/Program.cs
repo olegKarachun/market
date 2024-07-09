@@ -1,10 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using Trening.Business.Services;
+using Trening.Data;
 using Trening.DB;
 using Trening.Models;
 using Trening.Repositories;
 using Trening.Repositories.Interfaces;
-using Trening.Services;
-using Trening.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 

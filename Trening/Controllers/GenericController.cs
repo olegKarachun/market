@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Trening.Services.Interfaces;
+using Trening.Business.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace Trening.Controllers.GenericControlle
+namespace Trening.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class GenericController<T> : ControllerBase
+    public class GenericController<T> : ControllerBase where T : IApiModel //dont change
     {
         private readonly IGenericService<T> genericService;
         public GenericController(IGenericService<T> genericService)

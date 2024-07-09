@@ -1,6 +1,6 @@
-﻿namespace Trening.Services.Interfaces
+﻿namespace Trening.Business.Services
 {
-    public interface IGenericService<T>
+    public interface IGenericService<T> where T : IBusinessEntity //dont change
     {
         public T GetById(int id);
         public List<T> GetAll();

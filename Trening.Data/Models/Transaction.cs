@@ -1,6 +1,8 @@
-﻿namespace Trening.Models
+﻿using Trening.Models.Interfaces;
+
+namespace Trening.Models
 {
-    public class Transaction
+    public class Transaction : IEntity
     {
         public int Id { get; set; }
         public Customer Customers { get; set; }

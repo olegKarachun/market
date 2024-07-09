@@ -1,7 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Trening.Models;
+﻿using Trening.Models;
 
-namespace Trening.DB
+namespace Trening.Data
 {
     public class AppDbContext : DbContext
     {

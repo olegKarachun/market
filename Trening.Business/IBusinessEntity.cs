@@ -1,4 +1,4 @@
-﻿namespace Trening.Models.Interfaces
+﻿namespace Trening.Business
 {
     public interface IBusinessEntity
     {

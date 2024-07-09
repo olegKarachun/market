@@ -1,11 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Runtime.CompilerServices;
-using Trening.Controllers.GenericControlle;
-using Trening.DB;
-using Trening.Models;
-using Trening.Services.Interfaces;
+using Trening.Business.Services;
 
-namespace Trening.Controllers
+namespace Trening.Controllers.Implementations
 {
     [ApiController]
     [Route("[controller]")]

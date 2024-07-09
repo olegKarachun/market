@@ -1,9 +1,8 @@
-﻿using Trening.Repositories.Interfaces;
-using Trening.Services.Interfaces;
+﻿using Trening.Repositories;
 
-namespace Trening.Services
+namespace Trening.Business.Services
 {
-    public class GenericService<T> : IGenericService<T> where T : class
+    public class GenericService<T> : IGenericService<T> where T : IBusinessEntity //dont change
     {
         private readonly IGenericRepository<T> _repository;
         public GenericService(IGenericRepository<T> repository)

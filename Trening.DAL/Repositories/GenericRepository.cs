@@ -1,15 +1,15 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
-using Trening.Data;
 using Trening.Models.Interfaces;
 
-namespace Trening.Repositories
+namespace Trening.DAL.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : IEntity //не менять
     {
 
         private readonly AppDbContext _dbContext;
         private readonly DbSet<T> _entity;
+
         public GenericRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;

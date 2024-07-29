@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Market.BLL.Models
 {
-    public class CustomerBusiness : BusinessEntity<int>
+    public class CustomerBusiness : BusinessEntity
     {
-        public CustomerBusiness(int Id) : base(Id)
+        public CustomerBusiness()
         {
         }
         public string Email { get; set; }

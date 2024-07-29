@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Market.BLL.Service.Base
 {
-    public abstract class GenericService<TBusiness, TBusinessId, TEntity, TEntityId>
-        where TBusiness : BusinessEntity<TBusinessId>
-        where TEntity : Entity<TEntityId>
+    public abstract class GenericService<TBusiness, TEntity>
+        where TBusiness : BusinessEntity
+        where TEntity : Entity
     {
-        protected readonly Repository<TEntity, TEntityId> repository;
+        protected readonly Repository<TEntity> repository;
         protected readonly IMapper mapper;
 
-        protected GenericService(Repository<TEntity, TEntityId> repository, IMapper mapper)
+        protected GenericService(Repository<TEntity> repository, IMapper mapper)
         {
             this.repository = repository;
             this.mapper = mapper;
@@ -26,9 +26,9 @@ namespace Market.BLL.Service.Base
             await repository.Add(entity);
         }
 
-        public async Task Delete(TBusinessId id)
+        public async Task Delete(int id)
         {
-            var entity = await repository.GetById(MapToEntityId(id));
+            var entity = await repository.GetById(id);
             if (entity != null)
             {
                 await repository.Delete(entity);
@@ -47,12 +47,10 @@ namespace Market.BLL.Service.Base
             return mapper.Map<List<TBusiness>>(entities);
         }
 
-        public async Task<TBusiness> GetById(TBusinessId id)
+        public async Task<TBusiness> GetById(int id)
         {
-            var entity = await repository.GetById(MapToEntityId(id));
+            var entity = await repository.GetById(id);
             return mapper.Map<TBusiness>(entity);
         }
-
-        protected abstract TEntityId MapToEntityId(TBusinessId businessId);
     }
 }

@@ -61,6 +61,7 @@ namespace market.Controllers
         public async Task<ActionResult> Update(int id, ProductApiRequest product)
         {
             var mappedProduct = mapper.Map<ProductBusiness>(product);
+            mappedProduct.Id = id;
 
             await productService.Update(mappedProduct);
             return NoContent();

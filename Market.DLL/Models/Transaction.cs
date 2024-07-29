@@ -2,12 +2,13 @@
 
 namespace Market.DAL.Models
 {
-    public class Transaction : Entity<int>
+    public class Transaction : Entity
     {
-        public Transaction() : base(default)
+        public Transaction()
         { }
-        public Transaction(int id, Customer customers, Product products, int amount, string addres) : base(id)
+        public Transaction(int id, Customer customers, Product products, int amount, string addres)
         {
+            Id = id;
             Customers = customers;
             Products = products;
             Amount = amount;
@@ -15,9 +16,13 @@ namespace Market.DAL.Models
         }
 
         public int Id { get; set; }
-        public Customer Customers { get; set; }
-        public Product Products { get; set; }
         public int Amount { get; set; }
         public string Addres { get; set; }
+        public int CustomerId { get; set; }
+        public int ProductId { get; set; }
+
+
+        public Customer Customers { get; set; }
+        public Product Products { get; set; }
     }
 }

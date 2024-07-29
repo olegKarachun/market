@@ -23,6 +23,8 @@ builder.Services.AddTransient<CustomerRepository>();
 builder.Services.AddTransient<CustomerService>();
 builder.Services.AddTransient<ProductRepository>();
 builder.Services.AddTransient<ProductService>();
+builder.Services.AddTransient<TransactionRepository>();
+builder.Services.AddTransient<TransactionService>();
 
 var app = builder.Build();
 

@@ -1,12 +1,7 @@
 ﻿namespace Market.DAL.Models.Base
 {
-    public abstract class Entity<TEntityId>
+    public abstract class Entity
     {
-        protected Entity(TEntityId id)
-        {
-            Id = id;
-        }
-
-        public TEntityId Id { get; init; }
+        public int Id { get; init; }
     }
 }

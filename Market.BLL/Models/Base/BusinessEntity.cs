@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace Market.BLL.Models.Base
 {
-    public class BusinessEntity<IBusinessEntityId>
+    public class BusinessEntity
     {
-        public BusinessEntity(IBusinessEntityId Id)
-        {
-            this.Id = Id;
-        }
-
-        public IBusinessEntityId Id { get; set; }
+      public int Id { get; set; }
     }
 }

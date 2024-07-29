@@ -6,15 +6,17 @@ using Market.DAL.Repository;
 
 namespace Market.BLL.Service
 {
-    public class CustomerService : GenericService<CustomerBusiness, int, Customer, int>
+    public class CustomerService : GenericService<CustomerBusiness, Customer>
     {
+        private readonly CustomerRepository customerRepository;
         public CustomerService(CustomerRepository repository, IMapper mapper) : base(repository, mapper)
         {
+            customerRepository=repository;
         }
 
-        protected override int MapToEntityId(int businessId)
+        public async Task<Customer> GetCustomerbyEmailAsync(string email)
         {
-            return businessId;
+            return await customerRepository.GetCustomerByEmailAsync(email);
         }
     }
 }

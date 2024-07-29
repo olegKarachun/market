@@ -5,11 +5,12 @@ using Market.DAL.Models;
 using Market.DAL.Repository;
 using Market.DAL.Repository.Base;
 
+
 namespace Market.BLL.Service
 {
-    public class ProductService : GenericService<ProductBusiness, Product>
+    public class TransactionService : GenericService<TransactionBusiness, Transaction>
     {
-        public ProductService(ProductRepository repository, IMapper mapper) : base(repository, mapper)
+        public TransactionService(TransactionRepository repository, IMapper mapper) : base(repository, mapper)
         {
         }
     }

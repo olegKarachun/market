@@ -3,12 +3,13 @@ using System.Transactions;
 
 namespace Market.DAL.Models
 {
-    public class Product : Entity<int>
+    public class Product : Entity
     {
-        public Product() :base(default)
+        public Product()
         { }
-        public Product(int id, string name, string description, int price, string photo, int amount, List<Transaction> transactions): base(id)
+        public Product(int id, string name, string description, int price, string photo, int amount, List<Transaction> transactions)
         {
+            Id = id;
             Name = name;
             Description = description;
             Price = price;

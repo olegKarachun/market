@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace Market.BLL.Models
 {
-    public class ProductBusiness : BusinessEntity<int>
+    public class ProductBusiness : BusinessEntity
     {
-        public ProductBusiness(int Id) : base(Id)
+        public ProductBusiness()
         {
         }
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Price { get; set; }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Market.BLL.mapping
 {
-    internal class MappingProfile : Profile
+    public class MappingProfile : Profile
     {
         public MappingProfile()
         {
@@ -17,6 +17,7 @@ namespace Market.BLL.mapping
             CreateMap<TransactionBusiness, Customer>().ReverseMap();
             CreateMap<ProductBusiness, Product>().ReverseMap();
             CreateMap<ProductBusiness, Product>();
+            CreateMap<TransactionBusiness, Transaction>();
 
         }
     }

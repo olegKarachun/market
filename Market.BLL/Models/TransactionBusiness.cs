@@ -8,14 +8,15 @@ using System.Threading.Tasks;
 
 namespace Market.BLL.Models
 {
-    public class TransactionBusiness : BusinessEntity<int>
+    public class TransactionBusiness : BusinessEntity
     {
-        public TransactionBusiness(int Id) : base(Id)
+        public TransactionBusiness()
         {
         }
-        public int Id { get; set; }
         public CustomerBusiness Customers { get; set; }
         public ProductBusiness Products { get; set; }
+        public int CustomerId { get; set; }
+        public int ProductId { get; set; }
         public int Amount { get; set; }
         public string Addres { get; set; }
     }

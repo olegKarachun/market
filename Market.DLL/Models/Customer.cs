@@ -4,12 +4,13 @@ using System.Transactions;
 
 namespace Market.DAL.Models
 {
-    public class Customer : Entity<int>
+    public class Customer : Entity
     {
-        public Customer() : base(default)
+        public Customer()
         { }
-        public Customer(int id, string Email, string Name) : base(id)
+        public Customer(int id, string Email, string Name) 
         {
+            this.Id = id;
             this.Email = Email;
             this.Name = Name;
         }

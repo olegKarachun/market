@@ -3,7 +3,7 @@ using Market.DAL.Repository.Base;
 
 namespace Market.DAL.Repository
 {
-    public class ProductRepository : Repository<Product, int>
+    public class ProductRepository : Repository<Product>
     {
         public ProductRepository(AppDbContext context) : base(context)
         {
